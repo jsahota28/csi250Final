@@ -1,0 +1,45 @@
+﻿@model Order
+<h4>Would you like to add additional Computers to this order?</h4>
+<hr />
+<a asp-action="Create" asp-route-orderID="@Model.ID" class="btn btn-primary">Yes, add more Computers</a>
+<a asp-action="Index" asp-controller="Customer" class="btn btn-warning">No, order is complete</a>
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.OrderDate)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.OrderDate)
+    </dd>
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.Customer)
+    </dt>
+    <dd class="col-sm-10">
+        @Html.DisplayFor(model => model.Customer.Email)
+    </dd>
+</dl>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ComputerOrder.First().Computer.CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComputerOrder.First().Computer.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ComputerOrder.First().Quantity)
+        </th>
+        <th>
+            Total
+        </th>
+    </tr>
+    @foreach(ComputerOrder co in Model.ComputerOrder)
+    {
+        decimal total = @co.Computer.Price * @co.Quantity;
+        <tr>
+            <td>@co.Computer.CompanyName</td>
+            <td>@co.Computer.Price</td>
+            <td>@co.Quantity</td>
+            <td>@total.ToString("c2")</td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Customer>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Current Customers</h1>
+
+<p>
+    <a asp-controller="Customer" asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table table-striped table-dark">
+    <thead class="thead-light">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Mobile)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (Customer item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(x => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(x => item.Mobile)
+            </td>
+            <td>
+                <a asp-controller="Order" asp-action="Create" asp-route-customerID=@item.ID class="btn btn-warning">Start New Order</a> |
+                <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-secondary">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID" class="btn btn-primary">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

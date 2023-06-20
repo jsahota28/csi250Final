@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="header">
+    <h2>Seattle Electronic Sales</h2>
+    <h5>Leading the Pacific Nortwest in electronic sales!</h5>
+</div>
+<hr />
+<div class="font-weight-bolder">
+    <p>Since 2023, we have been serving the PNW with electronic sales. Our mission is to treat our customers
+        with integrity and respect. Contact Us today for your Computer, Celphone and Video game consoles today!
+        Let me introduce you to our team members.
+    </p>
+</div>
+
+
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <a href="https://localhost:5001/Computer/Details/1"><img src="~/Images/macbookproImg.jpg" class="d-block w-100" class="d-block w-100" alt="..."></a>
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Apple</h5>
+                <p>Macbook Pro</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <a href="https://localhost:5001/Computer/Details/2"><img src="~/Images/switchImg.jpg" class="d-block w-100" alt="..."></a>
+            
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Nitendo</h5>
+                <p>Switch</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <a href="https://localhost:5001/Computer/Details/3"><img src="~/Images/iphonexImg.jpg" class="d-block w-100" class="d-block w-100" alt="..."></a>
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Apple</h5>
+                <p>Iphone X</p>
+            </div>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-target="#carouselExampleCaptions" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-target="#carouselExampleCaptions" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </button>
+</div>
+<hr />
+<div class="card-deck">
+  <div class="card">
+    <img class="card-img-top" src="~/Images/drakeImg.jpeg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Drake</h5>
+            <p class="card-text">Sales Consultant</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 days ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="~/Images/jaskaranImg.jpeg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Jaskaran Sahota</h5>
+      <p class="card-text">Founder and Ceo</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card">
+    <img class="card-img-top" src="~/Images/kanyeImg.jpeg" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">Kanye</h5>
+            <p class="card-text">Financial Advisor</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 days ago</small></p>
+    </div>
+  </div>
+</div>
